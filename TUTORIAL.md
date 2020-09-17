@@ -59,7 +59,7 @@ To interact with the cockaroach management console (port 8080) you should first 
 You can interact with the database by logging into the pod and running the sql shell.
 
     oc rsh cockroachdb-0
-    cockroachdb sql --insecure
+    cockroach sql --insecure
 
 Once you are logged into the sql command line try [creating a database and inserting some data](https://www.cockroachlabs.com/docs/stable/insert-data.html) Be sure to run a `select * from <table>` to verify the data is actually there.
 
