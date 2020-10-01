@@ -43,11 +43,11 @@ helm install
 
 Once you have confidence in the chart go ahead and install it
 
-    helm install cockroachdb ./cockroachdb -n my-namespace
+    helm upgrade --install cockroachdb ./cockroachdb -n my-namespace
 
 If you want to override any of the values in values.yml you can add additonal files that override in order
 
-    helm install cockroachdb -f env/prod.yml -f env/cluster1.yml ./cockroachdb -n my-namespace
+    helm upgrade --install cockroachdb -f env/prod.yml -f env/cluster1.yml ./cockroachdb -n my-namespace
 
 interacting with the app
 ------------------------
