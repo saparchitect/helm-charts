@@ -1,0 +1,71 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  annotations:
+    openshift.io/host.generated: 'true'
+  selfLink: /apis/route.openshift.io/v1/namespaces/rjohnson/routes/rj-cockroachdb
+  resourceVersion: '612460'
+  name: rj-cockroachdb
+  uid: 19b919b1-149e-4ba4-8716-68a42f85d6d1
+  creationTimestamp: '2021-01-28T14:37:25Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2021-01-28T14:37:25Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:labels':
+            .: {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/managed-by': {}
+            'f:app.kubernetes.io/name': {}
+            'f:helm.sh/chart': {}
+        'f:spec':
+          'f:port':
+            .: {}
+            'f:targetPort': {}
+          'f:to':
+            'f:kind': {}
+            'f:name': {}
+            'f:weight': {}
+          'f:wildcardPolicy': {}
+    - manager: openshift-router
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2021-01-28T14:37:25Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:ingress': {}
+  namespace: rjohnson
+  labels:
+    app.kubernetes.io/component: cockroachdb
+    app.kubernetes.io/instance: cockroachdb
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: cockroachdb
+    helm.sh/chart: cockroachdb-4.1.6
+spec:
+  host: >-
+    rj-cockroachdb-rjohnson.nigel-openshift-test-162e406f043e20da9b0ef0731954a894-0000.us-south.containers.appdomain.cloud
+  to:
+    kind: Service
+    name: cockroachdb-public
+    weight: 100
+  port:
+    targetPort: http
+  wildcardPolicy: None
+status:
+  ingress:
+    - host: >-
+        rj-cockroachdb-rjohnson.nigel-openshift-test-162e406f043e20da9b0ef0731954a894-0000.us-south.containers.appdomain.cloud
+      routerName: default
+      conditions:
+        - type: Admitted
+          status: 'True'
+          lastTransitionTime: '2021-01-28T14:37:25Z'
+      wildcardPolicy: None
+      routerCanonicalHostname: >-
+        nigel-openshift-test-162e406f043e20da9b0ef0731954a894-0000.us-south.containers.appdomain.cloud

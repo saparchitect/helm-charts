@@ -1,0 +1,19 @@
+---
+# Source: cockroachdb/templates/poddisruptionbudget.yaml
+kind: PodDisruptionBudget
+apiVersion: policy/v1beta1
+metadata:
+  name: RELEASE-NAME-cockroachdb-budget
+  namespace: "rjohnson"
+  labels:
+    helm.sh/chart: cockroachdb-4.1.6
+    app.kubernetes.io/name: cockroachdb
+    app.kubernetes.io/instance: "RELEASE-NAME"
+    app.kubernetes.io/managed-by: "Helm"
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: cockroachdb
+      app.kubernetes.io/instance: "RELEASE-NAME"
+      app.kubernetes.io/component: cockroachdb
+  maxUnavailable: 1
